@@ -17,6 +17,7 @@
 		F1465F0D23AA94BF0055F7C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1465F0B23AA94BF0055F7C3 /* LaunchScreen.storyboard */; };
 		F1465F1823AA94C00055F7C3 /* KaMPKitiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F1723AA94C00055F7C3 /* KaMPKitiOSTests.swift */; };
 		F1465F2323AA94C00055F7C3 /* KaMPKitiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F2223AA94C00055F7C3 /* KaMPKitiOSUITests.swift */; };
+		FEA2D363299D45A900EE3857 /* KeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA2D362299D45A900EE3857 /* KeyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		F1465F2223AA94C00055F7C3 /* KaMPKitiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaMPKitiOSUITests.swift; sourceTree = "<group>"; };
 		F1465F2423AA94C00055F7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C259C83C689DF8F4602F38 /* Pods-KaMPKitiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaMPKitiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaMPKitiOS/Pods-KaMPKitiOS.debug.xcconfig"; sourceTree = "<group>"; };
+		FEA2D362299D45A900EE3857 /* KeyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 				F1465F0E23AA94BF0055F7C3 /* Info.plist */,
 				46A5B5EE26AF54F7002EFEAA /* BreedListScreen.swift */,
 				461C74A92788F5F3004B1FFC /* CombineAdapters.swift */,
+				FEA2D362299D45A900EE3857 /* KeyButton.swift */,
 			);
 			path = KaMPKitiOS;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				461C74AA2788F5F3004B1FFC /* CombineAdapters.swift in Sources */,
 				46A5B5EF26AF54F7002EFEAA /* BreedListScreen.swift in Sources */,
 				F1465F0123AA94BF0055F7C3 /* AppDelegate.swift in Sources */,
+				FEA2D363299D45A900EE3857 /* KeyButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
