@@ -1,5 +1,7 @@
 package co.touchlab.kampkit.models
 
+import co.touchlab.kampkit.features.calculator.CalculatorState
+import co.touchlab.kampkit.features.calculator.InputAction
 import co.touchlab.kermit.Logger
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -32,20 +34,15 @@ class CalculatorViewModel(
                     input = currentInput.dropLast(1)
                 )
             }
+            is InputAction.Parentheses -> {
+                // TODO: Implement
+            }
             is InputAction.Clear -> {
                 _calculatorState.value = CalculatorState()
             }
+            is InputAction.Equals -> {
+                // TODO: Implement
+            }
         }
     }
-}
-
-data class CalculatorState(
-    val input: String = "",
-    val result: String = "",
-)
-
-sealed class InputAction {
-    data class Add(val value: String) : InputAction()
-    object Remove : InputAction()
-    object Clear : InputAction()
 }

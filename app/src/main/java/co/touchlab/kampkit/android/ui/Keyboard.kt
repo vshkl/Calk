@@ -7,8 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import co.touchlab.kampkit.android.ui.Button
-import co.touchlab.kampkit.android.ui.Key
+import co.touchlab.kampkit.features.calculator.Key
 
 @Composable
 fun Keyboard(

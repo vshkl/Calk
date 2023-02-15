@@ -3,7 +3,6 @@ package co.touchlab.kampkit.android.ui
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.aspectRatio
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -13,20 +12,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-
-sealed class Key {
-    object Plus : Key()
-    object Minus : Key()
-    object Multiply : Key()
-    object Divide : Key()
-    object Equals : Key()
-    object Clear : Key()
-    object Decimal : Key()
-    object Percent : Key()
-    object Parentheses : Key()
-    object Backspace : Key()
-    data class Number(val number: Int) : Key()
-}
+import co.touchlab.kampkit.features.calculator.Key
 
 @Composable
 fun Button(
