@@ -10,8 +10,8 @@ import SwiftUI
 import shared
 
 struct KeyButton: View {
-    var key: Key
-    var onClick: (_ key: Key) -> Void
+    let key: Key
+    let onClick: (_ key: Key) -> Void
 
     var keySymbol: String {
         switch key {
@@ -52,7 +52,6 @@ struct KeyButton: View {
                     .font(.system(size: 24, weight: Font.Weight.medium))
                     .padding(.all, 10)
                     .frame(maxWidth: .infinity)
-                    .padding()
                     .contentShape(Rectangle())
             }
         )

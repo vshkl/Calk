@@ -10,10 +10,10 @@ import SwiftUI
 import shared
 
 struct Keyboard: View {
-    var onClick: (_ key: Key) -> Void
+    let onClick: (_ key: Key) -> Void
 
     let keys: [[Key]] = [
-        [Key.Clear(), Key.Backspace(), Key.Percent(), Key.Plus()],
+        [Key.Clear(), Key.Backspace(), Key.Percent(), Key.Divide()],
         [Key.Number(number: 7), Key.Number(number: 8), Key.Number(number: 9), Key.Multiply()],
         [Key.Number(number: 4), Key.Number(number: 5), Key.Number(number: 6), Key.Minus()],
         [Key.Number(number: 1), Key.Number(number: 2), Key.Number(number: 3), Key.Plus()],
