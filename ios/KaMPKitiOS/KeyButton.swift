@@ -28,9 +28,11 @@ struct KeyButton: View {
         case is Key.Clear:
             return "AC"
         case is Key.Decimal:
-            return "."
+            return ","
         case is Key.Percent:
             return "%"
+        case is Key.Parentheses:
+            return "()"
         case is Key.Backspace:
             return "⌫"
         case let number as Key.Number:
@@ -41,16 +43,27 @@ struct KeyButton: View {
     }
 
     var body: some View {
-        Button("+") {
-            onClick(key)
-        }
+        Button(
+            action: {
+                onClick(key)
+            },
+            label: {
+                Text(keySymbol)
+                    .font(.system(size: 24, weight: Font.Weight.medium))
+                    .padding(.all, 10)
+                    .frame(maxWidth: .infinity)
+                    .padding()
+                    .contentShape(Rectangle())
+            }
+        )
+        .buttonStyle(PlainButtonStyle())
     }
 }
 
 struct KeyButton_Previews: PreviewProvider {
     static var previews: some View {
         KeyButton(
-            key: Key.Plus(),
+            key: Key.Number(number: 7),
             onClick: { _ in }
         )
     }
