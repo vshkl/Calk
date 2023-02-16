@@ -19,8 +19,12 @@ struct Display: View {
         ) {
             Text(input)
                 .font(.system(size: 40, weight: Font.Weight.medium))
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .debugBorder()
             Text(result)
                 .font(.system(size: 28, weight: Font.Weight.regular))
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .debugBorder()
         }
     }
 }

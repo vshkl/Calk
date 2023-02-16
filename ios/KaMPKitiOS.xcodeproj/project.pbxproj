@@ -24,6 +24,7 @@
 		FEE7494D299E3C780032ABA6 /* CalculatorScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7494C299E3C780032ABA6 /* CalculatorScreen.swift */; };
 		FEE7494F299E49860032ABA6 /* ObservableCalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE7494E299E49860032ABA6 /* ObservableCalculatorViewModel.swift */; };
 		FEE74951299E76700032ABA6 /* CalculatorScreenContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE74950299E76700032ABA6 /* CalculatorScreenContent.swift */; };
+		FEE74957299E8A820032ABA6 /* ViewExt.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE74956299E8A820032ABA6 /* ViewExt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		FEE7494C299E3C780032ABA6 /* CalculatorScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorScreen.swift; sourceTree = "<group>"; };
 		FEE7494E299E49860032ABA6 /* ObservableCalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableCalculatorViewModel.swift; sourceTree = "<group>"; };
 		FEE74950299E76700032ABA6 /* CalculatorScreenContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorScreenContent.swift; sourceTree = "<group>"; };
+		FEE74956299E8A820032ABA6 /* ViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +145,7 @@
 		F1465EFF23AA94BF0055F7C3 /* KaMPKitiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FEE74952299E82CD0032ABA6 /* ui */,
 				F1465F0023AA94BF0055F7C3 /* AppDelegate.swift */,
 				46A5B60626B04920002EFEAA /* Main.storyboard */,
 				46B5284C249C5CF400A7725D /* Koin.swift */,
@@ -151,13 +154,7 @@
 				F1465F0E23AA94BF0055F7C3 /* Info.plist */,
 				46A5B5EE26AF54F7002EFEAA /* BreedListScreen.swift */,
 				461C74A92788F5F3004B1FFC /* CombineAdapters.swift */,
-				FEA2D362299D45A900EE3857 /* KeyButton.swift */,
-				FEE74946299D7BCE0032ABA6 /* Keyboard.swift */,
-				FEE74948299D7D390032ABA6 /* GridStack.swift */,
-				FEE7494A299E393B0032ABA6 /* Display.swift */,
-				FEE7494C299E3C780032ABA6 /* CalculatorScreen.swift */,
 				FEE7494E299E49860032ABA6 /* ObservableCalculatorViewModel.swift */,
-				FEE74950299E76700032ABA6 /* CalculatorScreenContent.swift */,
 			);
 			path = KaMPKitiOS;
 			sourceTree = "<group>";
@@ -178,6 +175,36 @@
 				F1465F2423AA94C00055F7C3 /* Info.plist */,
 			);
 			path = KaMPKitiOSUITests;
+			sourceTree = "<group>";
+		};
+		FEE74952299E82CD0032ABA6 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				FEE74954299E82FC0032ABA6 /* components */,
+				FEE74953299E82F20032ABA6 /* screens */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		FEE74953299E82F20032ABA6 /* screens */ = {
+			isa = PBXGroup;
+			children = (
+				FEE7494C299E3C780032ABA6 /* CalculatorScreen.swift */,
+				FEE74950299E76700032ABA6 /* CalculatorScreenContent.swift */,
+			);
+			path = screens;
+			sourceTree = "<group>";
+		};
+		FEE74954299E82FC0032ABA6 /* components */ = {
+			isa = PBXGroup;
+			children = (
+				FEA2D362299D45A900EE3857 /* KeyButton.swift */,
+				FEE74946299D7BCE0032ABA6 /* Keyboard.swift */,
+				FEE74948299D7D390032ABA6 /* GridStack.swift */,
+				FEE7494A299E393B0032ABA6 /* Display.swift */,
+				FEE74956299E8A820032ABA6 /* ViewExt.swift */,
+			);
+			path = components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +405,7 @@
 				461C74AA2788F5F3004B1FFC /* CombineAdapters.swift in Sources */,
 				FEE7494D299E3C780032ABA6 /* CalculatorScreen.swift in Sources */,
 				FEE7494F299E49860032ABA6 /* ObservableCalculatorViewModel.swift in Sources */,
+				FEE74957299E8A820032ABA6 /* ViewExt.swift in Sources */,
 				46A5B5EF26AF54F7002EFEAA /* BreedListScreen.swift in Sources */,
 				FEE74951299E76700032ABA6 /* CalculatorScreenContent.swift in Sources */,
 				F1465F0123AA94BF0055F7C3 /* AppDelegate.swift in Sources */,
