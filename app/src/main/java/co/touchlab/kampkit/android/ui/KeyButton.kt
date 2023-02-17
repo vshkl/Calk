@@ -23,8 +23,8 @@ fun Button(
     val keyText: String = when (key) {
         is Key.Plus -> "+"
         is Key.Minus -> "-"
-        is Key.Multiply -> "*"
-        is Key.Divide -> "/"
+        is Key.Multiply -> "×"
+        is Key.Divide -> "÷"
         is Key.Equals -> "="
         is Key.Clear -> "AC"
         is Key.Decimal -> ","

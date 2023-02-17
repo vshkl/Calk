@@ -33,7 +33,10 @@ fun CalculatorScreenContent(
 @Composable
 fun CalculatorScreenContentPreview() {
     CalculatorScreenContent(
-        calculatorState = CalculatorState(),
+        calculatorState = CalculatorState(
+            input = "20×2+4÷2",
+            result = "42",
+        ),
         onInput = {},
     )
 }

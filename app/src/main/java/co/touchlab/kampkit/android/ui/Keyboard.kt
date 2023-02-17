@@ -4,9 +4,12 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.material.Card
+import androidx.compose.material.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import co.touchlab.kampkit.features.calculator.Key
 
 @Composable
@@ -14,7 +17,11 @@ fun Keyboard(
     modifier: Modifier = Modifier,
     onClick: (Key) -> Unit,
 ) {
-    Box(modifier = modifier) {
+    Card(
+        modifier = modifier,
+        shape = MaterialTheme.shapes.large,
+        elevation = 8.dp,
+    ) {
         Column {
             Row(
                 modifier = Modifier
