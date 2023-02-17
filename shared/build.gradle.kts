@@ -52,6 +52,7 @@ kotlin {
                 implementation(libs.touchlab.stately)
                 implementation(libs.multiplatformSettings.common)
                 implementation(libs.kotlinx.dateTime)
+                implementation(libs.multiplatformExpressionEvaluator)
                 api(libs.touchlab.kermit)
             }
         }
