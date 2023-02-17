@@ -55,8 +55,14 @@ class CalculatorViewModel(
     }
 
     private fun calculate() {
+        fun String.normalize(): String {
+            return this
+                .replace("÷", "/")
+                .replace("×", "*")
+        }
+
         val currentInput = calculatorState.value.input
-        val result = Evaluator().evaluateDouble(currentInput)
+        val result = Evaluator().evaluateDouble(currentInput.normalize())
         _calculatorState.value = _calculatorState.value.copy(
             result = result.toString(),
         )
