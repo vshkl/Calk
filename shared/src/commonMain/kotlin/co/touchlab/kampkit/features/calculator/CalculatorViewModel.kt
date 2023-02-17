@@ -2,6 +2,7 @@ package co.touchlab.kampkit.features.calculator
 
 import co.touchlab.kampkit.models.ViewModel
 import co.touchlab.kermit.Logger
+import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
@@ -48,8 +49,16 @@ class CalculatorViewModel(
                 _calculatorState.value = CalculatorState()
             }
             is InputAction.Equals -> {
-                // TODO: Implement
+                calculate()
             }
         }
+    }
+
+    private fun calculate() {
+        val currentInput = calculatorState.value.input
+        val result = Evaluator().evaluateDouble(currentInput)
+        _calculatorState.value = _calculatorState.value.copy(
+            result = result.toString(),
+        )
     }
 }
