@@ -1,7 +1,10 @@
 package co.touchlab.kampkit.android.ui
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import co.touchlab.kampkit.features.calculator.CalculatorState
 import co.touchlab.kampkit.features.calculator.InputAction
@@ -12,7 +15,10 @@ fun CalculatorScreenContent(
     calculatorState: CalculatorState,
     onInput: (InputAction) -> Unit,
 ) {
-    Column {
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        verticalArrangement = Arrangement.Bottom,
+    ) {
         Display(
             input = calculatorState.input,
             result = calculatorState.result,
