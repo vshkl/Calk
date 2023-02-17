@@ -7,7 +7,7 @@ import android.util.Log
 import co.touchlab.kampkit.AppInfo
 import co.touchlab.kampkit.initKoin
 import co.touchlab.kampkit.models.BreedViewModel
-import co.touchlab.kampkit.models.CalculatorViewModel
+import co.touchlab.kampkit.features.calculator.CalculatorViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module

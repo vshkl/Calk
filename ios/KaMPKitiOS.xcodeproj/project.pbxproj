@@ -145,12 +145,11 @@
 		F1465EFF23AA94BF0055F7C3 /* KaMPKitiOS */ = {
 			isa = PBXGroup;
 			children = (
+				FEE74958299E8BD60032ABA6 /* storyboards */,
 				FEE74952299E82CD0032ABA6 /* ui */,
 				F1465F0023AA94BF0055F7C3 /* AppDelegate.swift */,
-				46A5B60626B04920002EFEAA /* Main.storyboard */,
 				46B5284C249C5CF400A7725D /* Koin.swift */,
 				F1465F0923AA94BF0055F7C3 /* Assets.xcassets */,
-				F1465F0B23AA94BF0055F7C3 /* LaunchScreen.storyboard */,
 				F1465F0E23AA94BF0055F7C3 /* Info.plist */,
 				46A5B5EE26AF54F7002EFEAA /* BreedListScreen.swift */,
 				461C74A92788F5F3004B1FFC /* CombineAdapters.swift */,
@@ -205,6 +204,15 @@
 				FEE74956299E8A820032ABA6 /* ViewExt.swift */,
 			);
 			path = components;
+			sourceTree = "<group>";
+		};
+		FEE74958299E8BD60032ABA6 /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				46A5B60626B04920002EFEAA /* Main.storyboard */,
+				F1465F0B23AA94BF0055F7C3 /* LaunchScreen.storyboard */,
+			);
+			path = storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

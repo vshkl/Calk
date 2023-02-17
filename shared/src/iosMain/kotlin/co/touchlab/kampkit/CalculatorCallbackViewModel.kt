@@ -1,7 +1,7 @@
 package co.touchlab.kampkit
 
 import co.touchlab.kampkit.features.calculator.InputAction
-import co.touchlab.kampkit.models.CalculatorViewModel
+import co.touchlab.kampkit.features.calculator.CalculatorViewModel
 import co.touchlab.kampkit.models.CallbackViewModel
 import co.touchlab.kermit.Logger
 

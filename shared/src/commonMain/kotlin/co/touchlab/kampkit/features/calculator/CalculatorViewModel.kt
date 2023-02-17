@@ -1,7 +1,6 @@
-package co.touchlab.kampkit.models
+package co.touchlab.kampkit.features.calculator
 
-import co.touchlab.kampkit.features.calculator.CalculatorState
-import co.touchlab.kampkit.features.calculator.InputAction
+import co.touchlab.kampkit.models.ViewModel
 import co.touchlab.kermit.Logger
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -35,7 +34,15 @@ class CalculatorViewModel(
                 )
             }
             is InputAction.Parentheses -> {
-                // TODO: Implement
+                val currentInput = calculatorState.value.input
+                val parenthesesLeftCount = currentInput.count { it == '(' }
+                val parenthesesRightCount = currentInput.count { it == ')' }
+                _calculatorState.value = _calculatorState.value.copy(
+                    input = currentInput + when {
+                        parenthesesLeftCount > parenthesesRightCount -> ")"
+                        else -> "("
+                    }
+                )
             }
             is InputAction.Clear -> {
                 _calculatorState.value = CalculatorState()

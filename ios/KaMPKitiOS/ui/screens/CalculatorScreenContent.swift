@@ -17,6 +17,7 @@ struct CalculatorScreenContent: View {
 
     var body: some View {
         VStack {
+            Spacer()
             Display(
                 input: input,
                 result: result
