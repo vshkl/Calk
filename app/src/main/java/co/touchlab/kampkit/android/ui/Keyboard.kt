@@ -16,56 +16,30 @@ fun Keyboard(
     modifier: Modifier = Modifier,
     onClick: (Key) -> Unit,
 ) {
+    val keys: Array<Array<Key>> = arrayOf(
+        arrayOf(Key.Clear, Key.Backspace, Key.Percent, Key.Divide),
+        arrayOf(Key.Number(7), Key.Number(8), Key.Number(9), Key.Multiply),
+        arrayOf(Key.Number(4), Key.Number(5), Key.Number(6), Key.Minus),
+        arrayOf(Key.Number(1), Key.Number(2), Key.Number(3), Key.Plus),
+        arrayOf(Key.Parentheses, Key.Number(0), Key.Decimal, Key.Equals),
+    )
+
     Card(
         modifier = modifier,
         shape = MaterialTheme.shapes.large,
         elevation = 8.dp,
     ) {
         Column {
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-            ) {
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Clear, onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Backspace, onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Percent, onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Divide, onClick = onClick)
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-            ) {
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(7), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(8), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(9), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Multiply, onClick = onClick)
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-            ) {
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(4), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(5), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(6), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Minus, onClick = onClick)
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-            ) {
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(1), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(2), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(3), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Plus, onClick = onClick)
-            }
-            Row(
-                modifier = Modifier
-                    .fillMaxWidth(),
-            ) {
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Decimal, onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Number(0), onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Parentheses, onClick = onClick)
-                KeyButton(modifier = Modifier.weight(1F), key = Key.Equals, onClick = onClick)
+            for (row in keys) {
+                Row(modifier = Modifier.fillMaxWidth()) {
+                    for (key in row) {
+                        KeyButton(
+                            modifier = Modifier.weight(1F),
+                            key = key,
+                            onClick = onClick,
+                        )
+                    }
+                }
             }
         }
     }
