@@ -27,12 +27,14 @@ class CalculatorViewModel(
                 _calculatorState.value = _calculatorState.value.copy(
                     input = currentInput + action.value
                 )
+                maybeCalculate()
             }
             is InputAction.Remove -> {
                 val currentInput = calculatorState.value.input
                 _calculatorState.value = _calculatorState.value.copy(
                     input = currentInput.dropLast(1)
                 )
+                maybeCalculate()
             }
             is InputAction.Parentheses -> {
                 val currentInput = calculatorState.value.input
@@ -44,17 +46,22 @@ class CalculatorViewModel(
                         else -> "("
                     }
                 )
+                maybeCalculate()
             }
             is InputAction.Clear -> {
                 _calculatorState.value = CalculatorState()
             }
             is InputAction.Equals -> {
-                calculate()
+                val currentResult = calculatorState.value.result
+                _calculatorState.value = _calculatorState.value.copy(
+                    input = currentResult,
+                    result = "",
+                )
             }
         }
     }
 
-    private fun calculate() {
+    private fun maybeCalculate() {
         fun String.normalize(): String {
             return this
                 .replace("÷", "/")
@@ -62,9 +69,17 @@ class CalculatorViewModel(
         }
 
         val currentInput = calculatorState.value.input
-        val result = Evaluator().evaluateDouble(currentInput.normalize())
+        val evaluator = Evaluator()
+
+        val result: Double
+        try {
+            result = evaluator.evaluateDouble(currentInput.normalize())
+        } catch (e: IllegalArgumentException) {
+            return
+        }
+
         _calculatorState.value = _calculatorState.value.copy(
-            result = result.toString(),
+            result = result.toString().removeSuffix(".0")
         )
     }
 }
