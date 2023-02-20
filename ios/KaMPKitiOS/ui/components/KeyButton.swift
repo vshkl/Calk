@@ -93,13 +93,14 @@ struct KeyButton: View {
                 Text(keySymbol)
                     .font(.system(size: keyFontSize, weight: keyFontWeight))
                     .padding(.all, 10)
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .contentShape(Rectangle())
             }
         )
         .buttonStyle(.plain)
         .background(keyBackgroundColor)
         .foregroundColor(keyTextColor)
+        .aspectRatio(1.3, contentMode: .fit)
     }
 }
 
