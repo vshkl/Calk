@@ -25,6 +25,8 @@ android {
         warningsAsErrors = true
         abortOnError = true
     }
+
+    namespace = "co.touchlab.kampkit"
 }
 
 version = "1.2"
@@ -40,6 +42,7 @@ kotlin {
             languageSettings.apply {
                 optIn("kotlin.RequiresOptIn")
                 optIn("kotlinx.coroutines.ExperimentalCoroutinesApi")
+                optIn("kotlin.time.ExperimentalTime")
             }
         }
 
@@ -68,7 +71,7 @@ kotlin {
                 implementation(libs.ktor.client.okHttp)
             }
         }
-        val androidTest by getting {
+        val androidUnitTest by getting {
             dependencies {
                 implementation(libs.bundles.shared.androidTest)
             }
@@ -98,6 +101,7 @@ kotlin {
         homepage = "https://github.com/touchlab/KaMPKit"
         framework {
             isStatic = false // SwiftUI preview requires dynamic framework
+            linkerOpts("-lsqlite3")
         }
         ios.deploymentTarget = "12.4"
         podfile = project.file("../ios/Podfile")

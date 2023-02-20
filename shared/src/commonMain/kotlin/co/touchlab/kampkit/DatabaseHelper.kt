@@ -9,6 +9,7 @@ import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.runtime.coroutines.asFlow
 import com.squareup.sqldelight.runtime.coroutines.mapToList
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
 
@@ -39,7 +40,7 @@ class DatabaseHelper(
         dbRef.tableQueries
             .selectById(id)
             .asFlow()
-            .mapToList()
+            .mapToList(Dispatchers.Default)
             .flowOn(backgroundDispatcher)
 
     suspend fun deleteAll() {
@@ -60,7 +61,7 @@ class DatabaseHelper(
         dbRef.calculationQueries
             .selectAll()
             .asFlow()
-            .mapToList()
+            .mapToList(Dispatchers.Default)
             .flowOn(backgroundDispatcher)
 
     suspend fun insertCalculation(input: String, result: String) {
