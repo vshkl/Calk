@@ -29,7 +29,7 @@ fun KeyButton(
     key: Key,
     onClick: (Key) -> Unit,
 ) {
-    val keyText: String = when (key) {
+    val keySymbol: String = when (key) {
         is Key.Plus -> "+"
         is Key.Minus -> "-"
         is Key.Multiply -> "×"
@@ -88,7 +88,7 @@ fun KeyButton(
                 .padding(8.dp)
                 .align(Alignment.Center)
                 .clickable { onClick(key) },
-            text = keyText,
+            text = keySymbol,
             fontSize = keyFontSize.sp,
             fontWeight = keyFontWeight,
             color = keyTextColor,

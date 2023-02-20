@@ -42,6 +42,48 @@ struct KeyButton: View {
         }
     }
 
+    var keyFontSize: CGFloat {
+        switch key {
+        case is Key.Clear:
+            return 22
+        case is Key.Decimal, is Key.Percent, is Key.Parentheses, is Key.Backspace:
+            return 24
+        case is Key.Plus, is Key.Minus, is Key.Multiply, is Key.Divide, is Key.Equals, is Key.Number:
+            return 28
+        default:
+            return 22
+        }
+    }
+
+    var keyFontWeight: Font.Weight {
+        if key is Key.Number {
+            return Font.Weight.medium
+        } else {
+            return Font.Weight.regular
+        }
+    }
+
+    var keyBackgroundColor: Color {
+        if key is Key.Equals {
+            return Color(hex: 0xFFEE6C4D)
+        } else {
+            return Color(hex: 0xFFE0FBFC)
+        }
+    }
+
+    var keyTextColor: Color {
+        switch key {
+        case is Key.Minus, is Key.Plus, is Key.Multiply, is Key.Divide:
+            return Color(hex: 0xFFEE6C4D)
+        case is Key.Clear, is Key.Decimal, is Key.Percent, is Key.Parentheses, is Key.Backspace, is Key.Number:
+            return Color(hex: 0xFF293241)
+        case is Key.Equals:
+            return Color(hex: 0xFFE0FBFC)
+        default:
+            return Color(hex: 0xFF293241)
+        }
+    }
+
     var body: some View {
         Button(
             action: {
@@ -49,21 +91,41 @@ struct KeyButton: View {
             },
             label: {
                 Text(keySymbol)
-                    .font(.system(size: 24, weight: Font.Weight.medium))
+                    .font(.system(size: keyFontSize, weight: keyFontWeight))
                     .padding(.all, 10)
                     .frame(maxWidth: .infinity)
                     .contentShape(Rectangle())
             }
         )
-        .buttonStyle(PlainButtonStyle())
+        .buttonStyle(.plain)
+        .background(keyBackgroundColor)
+        .foregroundColor(keyTextColor)
     }
 }
 
 struct KeyButton_Previews: PreviewProvider {
     static var previews: some View {
-        KeyButton(
-            key: Key.Number(number: 7),
-            onClick: { _ in }
-        )
+        VStack {
+            KeyButton(
+                key: Key.Clear(),
+                onClick: { _ in }
+            )
+            KeyButton(
+                key: Key.Backspace(),
+                onClick: { _ in }
+            )
+            KeyButton(
+                key: Key.Divide(),
+                onClick: { _ in }
+            )
+            KeyButton(
+                key: Key.Number(number: 7),
+                onClick: { _ in }
+            )
+            KeyButton(
+                key: Key.Equals(),
+                onClick: { _ in }
+            )
+        }
     }
 }
