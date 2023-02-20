@@ -26,7 +26,7 @@ class CalculatorViewModel(
         .getCalculations()
         .map { calculations ->
             calculations.map { calculation ->
-                "${calculation.input} = ${calculation.result}"
+                "${calculation.input}=${calculation.result}"
             }
         }
         .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())

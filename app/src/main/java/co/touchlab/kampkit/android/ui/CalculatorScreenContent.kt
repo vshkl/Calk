@@ -13,12 +13,16 @@ import co.touchlab.kampkit.features.calculator.Key
 @Composable
 fun CalculatorScreenContent(
     calculatorState: CalculatorState,
+    calculations: List<String>,
     onInput: (InputAction) -> Unit,
 ) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Bottom,
     ) {
+        CalculationsHistory(
+            calculations = calculations,
+        )
         Display(
             input = calculatorState.input,
             result = calculatorState.result,
@@ -36,6 +40,10 @@ fun CalculatorScreenContentPreview() {
         calculatorState = CalculatorState(
             input = "20×2+4÷2",
             result = "42",
+        ),
+        calculations = listOf(
+            "1+1=2",
+            "2+2=4",
         ),
         onInput = {},
     )

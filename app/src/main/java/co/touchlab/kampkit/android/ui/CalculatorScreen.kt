@@ -34,6 +34,7 @@ fun CalculatorScreen(
 
     CalculatorScreenContent(
         calculatorState = calculatorState,
+        calculations = calculationHistory,
         onInput = viewModel::modifyInput,
     )
 }
