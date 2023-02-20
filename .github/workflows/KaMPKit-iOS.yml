@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - main
+      - none # Was "main". Disabled for now.
   pull_request:
     paths-ignore:
       - "**.md"
