@@ -6,6 +6,7 @@ import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class CalculatorViewModel(
     private val calculatorRepository: CalculatorRepository,
@@ -54,11 +55,18 @@ class CalculatorViewModel(
                 _calculatorState.value = CalculatorState()
             }
             is InputAction.Equals -> {
+                val currentInput = calculatorState.value.input
                 val currentResult = calculatorState.value.result
                 _calculatorState.value = _calculatorState.value.copy(
                     input = currentResult,
                     result = "",
                 )
+                viewModelScope.launch {
+                    calculatorRepository.insertCalculation(
+                        input = currentInput,
+                        result = currentResult,
+                    )
+                }
             }
         }
     }
