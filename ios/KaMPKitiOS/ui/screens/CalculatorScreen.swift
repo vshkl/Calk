@@ -19,6 +19,7 @@ struct CalculatorScreen: View {
         CalculatorScreenContent(
             input: observableViewModel.input,
             result: observableViewModel.result,
+            history: observableViewModel.history,
             onKeyPress: { key in
                 let inputAction = InputAction.companion.fromKey(key: key)
                 observableViewModel.onModifyInput(with: inputAction)

@@ -13,11 +13,12 @@ struct CalculatorScreenContent: View {
 
     let input: String
     let result: String
+    let history: [String]
     let onKeyPress: (Key) -> Void
 
     var body: some View {
         VStack {
-            Spacer()
+            HistoryList(history: history)
             Display(
                 input: input,
                 result: result
@@ -34,6 +35,7 @@ struct CalculatorScreenContent_Previews: PreviewProvider {
         CalculatorScreenContent(
             input: "2+2",
             result: "4",
+            history: ["1+1=2", "2+2=4", "3+3=6"],
             onKeyPress: { _ in }
         )
     }

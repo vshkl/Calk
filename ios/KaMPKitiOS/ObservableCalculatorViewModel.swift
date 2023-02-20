@@ -21,12 +21,19 @@ class ObservableCalculatorViewModel: ObservableObject {
     @Published
     var result: String = ""
 
+    @Published
+    var history: [String] = []
+
     func activate() {
         let viewModel = KotlinDependencies.shared.getCalculatorViewModel()
 
         doPublish(viewModel.calculatorState) { [weak self] state in
             self?.input = state.input
             self?.result = state.result
+        }.store(in: &cancellables)
+
+        doPublish(viewModel.calculationsHistory) { [weak self] history in
+            self?.history = history.compactMap({ $0 as? String })
         }.store(in: &cancellables)
 
         self.viewModel = viewModel

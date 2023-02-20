@@ -16,6 +16,8 @@ class CalculatorCallbackViewModel(
 
     val calculatorState = viewModel.calculatorState.asCallbacks()
 
+    val calculationsHistory = viewModel.calculationHistory.asCallbacks()
+
     fun modifyInput(inputAction: InputAction) {
         viewModel.modifyInput(inputAction)
     }
