@@ -21,7 +21,7 @@ class MainApp : Application() {
                 single<Context> { this@MainApp }
                 viewModel {
                     BreedViewModel(get(), get { parametersOf("BreedViewModel") })
-                    CalculatorViewModel(get { parametersOf("CalculatorViewModel") })
+                    CalculatorViewModel(get(), get { parametersOf("CalculatorViewModel") })
                 }
                 single<SharedPreferences> {
                     get<Context>().getSharedPreferences("KAMPSTARTER_SETTINGS", Context.MODE_PRIVATE)

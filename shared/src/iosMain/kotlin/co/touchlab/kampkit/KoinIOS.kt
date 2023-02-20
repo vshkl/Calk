@@ -33,7 +33,7 @@ actual val platformModule = module {
 
     single { BreedCallbackViewModel(get(), getWith("BreedCallbackViewModel")) }
 
-    single { CalculatorCallbackViewModel(getWith("CalculatorCallbackViewModel")) }
+    single { CalculatorCallbackViewModel(get(), getWith("CalculatorCallbackViewModel")) }
 }
 
 // Access from Swift to create a logger

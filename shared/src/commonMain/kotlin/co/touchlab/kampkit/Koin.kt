@@ -3,6 +3,7 @@ package co.touchlab.kampkit
 import co.touchlab.kampkit.ktor.DogApi
 import co.touchlab.kampkit.ktor.DogApiImpl
 import co.touchlab.kampkit.models.BreedRepository
+import co.touchlab.kampkit.models.CalculatorRepository
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
 import co.touchlab.kermit.platformLogWriter
@@ -62,7 +63,10 @@ private val coreModule = module {
     // uses you *may* want to have a more robust configuration from the native platform. In KaMP Kit,
     // that would likely go into platformModule expect/actual.
     // See https://github.com/touchlab/Kermit
-    val baseLogger = Logger(config = StaticConfig(logWriterList = listOf(platformLogWriter())), "KampKit")
+    val baseLogger = Logger(
+        config = StaticConfig(logWriterList = listOf(platformLogWriter())),
+        "KampKit",
+    )
     factory { (tag: String?) -> if (tag != null) baseLogger.withTag(tag) else baseLogger }
 
     single {
@@ -72,6 +76,13 @@ private val coreModule = module {
             get(),
             getWith("BreedRepository"),
             get()
+        )
+    }
+    single {
+        CalculatorRepository(
+            get(),
+            getWith("CalculatorRepository"),
+            get(),
         )
     }
 }

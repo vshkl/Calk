@@ -1,5 +1,6 @@
 package co.touchlab.kampkit.features.calculator
 
+import co.touchlab.kampkit.models.CalculatorRepository
 import co.touchlab.kampkit.models.ViewModel
 import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.Evaluator
@@ -7,6 +8,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 
 class CalculatorViewModel(
+    private val calculatorRepository: CalculatorRepository,
     log: Logger,
 ) : ViewModel() {
 

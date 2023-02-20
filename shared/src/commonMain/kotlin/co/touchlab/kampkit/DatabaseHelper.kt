@@ -57,7 +57,7 @@ class DatabaseHelper(
     }
 
     fun selectAllCalculations(): Flow<List<Calculation>> =
-        dbRef.calculatioQueries
+        dbRef.calculationQueries
             .selectAll()
             .asFlow()
             .mapToList()
@@ -66,14 +66,14 @@ class DatabaseHelper(
     suspend fun insertCalculation(input: String, result: String) {
         log.d { "Inserting calculation with input: $input and result $result into database" }
         dbRef.transactionWithContext(backgroundDispatcher) {
-            dbRef.calculatioQueries.insertCalculation(input, result)
+            dbRef.calculationQueries.insertCalculation(input, result)
         }
     }
 
     suspend fun deleteAllCalculations() {
         log.i { "Calculations Cleared" }
         dbRef.transactionWithContext(backgroundDispatcher) {
-            dbRef.calculatioQueries.deleteAll()
+            dbRef.calculationQueries.deleteAll()
         }
     }
 }
