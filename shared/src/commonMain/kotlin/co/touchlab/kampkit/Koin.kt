@@ -1,8 +1,5 @@
 package co.touchlab.kampkit
 
-import co.touchlab.kampkit.ktor.DogApi
-import co.touchlab.kampkit.ktor.DogApiImpl
-import co.touchlab.kampkit.models.BreedRepository
 import co.touchlab.kampkit.models.CalculatorRepository
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
@@ -49,12 +46,6 @@ private val coreModule = module {
             Dispatchers.Default
         )
     }
-    single<DogApi> {
-        DogApiImpl(
-            getWith("DogApiImpl"),
-            get()
-        )
-    }
     single<Clock> {
         Clock.System
     }
@@ -69,15 +60,6 @@ private val coreModule = module {
     )
     factory { (tag: String?) -> if (tag != null) baseLogger.withTag(tag) else baseLogger }
 
-    single {
-        BreedRepository(
-            get(),
-            get(),
-            get(),
-            getWith("BreedRepository"),
-            get()
-        )
-    }
     single {
         CalculatorRepository(
             get(),
