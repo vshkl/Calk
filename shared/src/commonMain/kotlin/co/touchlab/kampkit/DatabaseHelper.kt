@@ -1,6 +1,7 @@
 package co.touchlab.kampkit
 
 import co.touchlab.kampkit.db.Breed
+import co.touchlab.kampkit.db.Calculation
 import co.touchlab.kampkit.db.KaMPKitDb
 import co.touchlab.kampkit.sqldelight.transactionWithContext
 import co.touchlab.kermit.Logger
@@ -52,6 +53,27 @@ class DatabaseHelper(
         log.i { "Breed $breedId: Favorited $favorite" }
         dbRef.transactionWithContext(backgroundDispatcher) {
             dbRef.tableQueries.updateFavorite(favorite, breedId)
+        }
+    }
+
+    fun selectAllCalculations(): Flow<List<Calculation>> =
+        dbRef.calculatioQueries
+            .selectAll()
+            .asFlow()
+            .mapToList()
+            .flowOn(backgroundDispatcher)
+
+    suspend fun insertCalculation(input: String, result: String) {
+        log.d { "Inserting calculation with input: $input and result $result into database" }
+        dbRef.transactionWithContext(backgroundDispatcher) {
+            dbRef.calculatioQueries.insertCalculation(input, result)
+        }
+    }
+
+    suspend fun deleteAllCalculations() {
+        log.i { "Calculations Cleared" }
+        dbRef.transactionWithContext(backgroundDispatcher) {
+            dbRef.calculatioQueries.deleteAll()
         }
     }
 }
