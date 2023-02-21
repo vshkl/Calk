@@ -1,9 +1,11 @@
 package co.touchlab.kampkit.android.ui
 
+import androidx.compose.foundation.horizontalScroll
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -24,14 +26,24 @@ fun Display(
             .padding(horizontal = 16.dp, vertical = 8.dp),
     ) {
         Text(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(
+                    state = rememberScrollState(),
+                    reverseScrolling = true,
+                ),
             text = input,
             textAlign = TextAlign.End,
             fontSize = 40.sp,
         )
         Spacer(modifier = Modifier.padding(vertical = 4.dp))
         Text(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .horizontalScroll(
+                    state = rememberScrollState(),
+                    reverseScrolling = true,
+                ),
             text = result,
             textAlign = TextAlign.End,
             fontSize = 28.sp,
