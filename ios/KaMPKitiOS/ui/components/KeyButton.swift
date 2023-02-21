@@ -65,22 +65,22 @@ struct KeyButton: View {
 
     var keyBackgroundColor: Color {
         if key is Key.Equals {
-            return Color(hex: 0xFFEE6C4D)
+            return Color.burntSienna
         } else {
-            return Color(hex: 0xFFE0FBFC)
+            return Color.mintFoam
         }
     }
 
     var keyTextColor: Color {
         switch key {
         case is Key.Minus, is Key.Plus, is Key.Multiply, is Key.Divide:
-            return Color(hex: 0xFFEE6C4D)
+            return Color.burntSienna
         case is Key.Clear, is Key.Decimal, is Key.Percent, is Key.Parentheses, is Key.Backspace, is Key.Number:
-            return Color(hex: 0xFF293241)
+            return Color.ebonyClay
         case is Key.Equals:
-            return Color(hex: 0xFFE0FBFC)
+            return Color.mintFoam
         default:
-            return Color(hex: 0xFF293241)
+            return Color.ebonyClay
         }
     }
 

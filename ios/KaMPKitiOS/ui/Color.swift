@@ -8,6 +8,21 @@
 
 import SwiftUI
 
+public extension Color {
+
+    static var burntSienna: Color {
+        Color(hex: 0xFFEE6C4D)
+    }
+
+    static var mintFoam: Color {
+        Color(hex: 0xFFE0FBFC)
+    }
+
+    static var ebonyClay: Color {
+        Color(hex: 0xFF293241)
+    }
+}
+
 extension Color: RawRepresentable {
 
     public init?(rawValue: Int) {
@@ -36,6 +51,7 @@ extension Color: RawRepresentable {
 }
 
 extension Color {
+
     init(hex: Int, opacity: Double = 1.0) {
         let red = Double((hex & 0xFF0000) >> 16) / 255.0
         let green = Double((hex & 0xFF00) >> 8) / 255.0
