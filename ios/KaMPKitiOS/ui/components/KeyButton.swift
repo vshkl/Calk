@@ -92,7 +92,6 @@ struct KeyButton: View {
             label: {
                 Text(keySymbol)
                     .font(.system(size: keyFontSize, weight: keyFontWeight))
-                    .padding(.all, 10)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                     .contentShape(Rectangle())
             }

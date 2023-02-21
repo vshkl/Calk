@@ -32,7 +32,6 @@ struct Keyboard: View {
                 }
             )
         }
-        .frame(width: .infinity)
     }
 }
 

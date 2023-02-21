@@ -19,10 +19,12 @@ struct Display: View {
         ) {
             Text(input)
                 .font(.system(size: 40, weight: Font.Weight.medium))
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxWidth: .infinity, idealHeight: 50, alignment: .trailing)
+                .fixedSize(horizontal: false, vertical: true)
             Text(result)
                 .font(.system(size: 28, weight: Font.Weight.regular))
-                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(maxWidth: .infinity, idealHeight: 40, alignment: .trailing)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .padding(.horizontal, 10)
     }

@@ -17,12 +17,10 @@ struct CalculatorScreenContent: View {
     let onKeyPress: (Key) -> Void
 
     var body: some View {
-        VStack {
+        VStack(spacing: 0) {
             HistoryList(history: history)
-            Display(
-                input: input,
-                result: result
-            )
+            Display(input: input,result: result)
+                .padding(.bottom, 10)
             Keyboard(onClick: { key in
                 onKeyPress(key)
             }).layoutPriority(1)

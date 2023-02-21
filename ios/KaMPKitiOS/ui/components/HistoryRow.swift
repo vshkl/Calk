@@ -14,10 +14,11 @@ struct HistoryRow: View {
     var body: some View {
         Text(calculation)
             .font(.system(size: 15, weight: Font.Weight.medium))
-            .foregroundColor(Color(hex: 0xFF293241))
+            .foregroundColor(Color.ebonyClay)
             .padding(.horizontal, 10)
             .padding(.vertical, 5)
-            .frame(maxWidth: .infinity, alignment: Alignment.trailing)
+            .frame(maxWidth: .infinity, idealHeight: 25, alignment: Alignment.trailing)
+            .fixedSize(horizontal: false, vertical: true)
             .contentShape(Rectangle())
     }
 }
