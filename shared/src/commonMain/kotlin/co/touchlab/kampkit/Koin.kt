@@ -3,6 +3,7 @@ package co.touchlab.kampkit
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
 import co.touchlab.kermit.platformLogWriter
+import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.Dispatchers
 import kotlinx.datetime.Clock
 import org.koin.core.KoinApplication
@@ -48,6 +49,9 @@ private val coreModule = module {
     single<Clock> {
         Clock.System
     }
+    single {
+        Evaluator()
+    }
 
     // platformLogWriter() is a relatively simple config option, useful for local debugging. For production
     // uses you *may* want to have a more robust configuration from the native platform. In KaMP Kit,
@@ -61,6 +65,7 @@ private val coreModule = module {
 
     single {
         CalculatorRepository(
+            get(),
             get(),
             getWith("CalculatorRepository"),
         )
