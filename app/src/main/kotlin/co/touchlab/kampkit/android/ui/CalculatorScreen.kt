@@ -22,19 +22,12 @@ fun CalculatorScreen(
         remember(viewModel.calculatorState, lifecycleOwner) {
             viewModel.calculatorState.flowWithLifecycle(lifecycleOwner.lifecycle)
         }
-    val lifecycleAwareCalculationHistoryFlow: Flow<List<String>> =
-        remember(viewModel.calculationHistory, lifecycleOwner) {
-            viewModel.calculationHistory.flowWithLifecycle(lifecycleOwner.lifecycle)
-        }
 
     val calculatorState: CalculatorState by lifecycleAwareCalculatorFlow
         .collectAsState(viewModel.calculatorState.value)
-    val calculationHistory: List<String> by lifecycleAwareCalculationHistoryFlow
-        .collectAsState(viewModel.calculationHistory.value)
 
     CalculatorScreenContent(
         calculatorState = calculatorState,
-        calculations = calculationHistory,
         onInput = viewModel::modifyInput,
     )
 }

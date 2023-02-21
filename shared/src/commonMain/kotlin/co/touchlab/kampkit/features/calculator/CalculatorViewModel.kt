@@ -5,10 +5,8 @@ import co.touchlab.kampkit.models.ViewModel
 import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.map
-import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class CalculatorViewModel(
@@ -22,14 +20,17 @@ class CalculatorViewModel(
         MutableStateFlow(CalculatorState())
     val calculatorState: StateFlow<CalculatorState> = _calculatorState
 
-    val calculationHistory: StateFlow<List<String>> = calculatorRepository
-        .getCalculations()
-        .map { calculations ->
-            calculations.map { calculation ->
-                "${calculation.input}=${calculation.result}"
+    init {
+        calculatorRepository
+            .getCalculations()
+            .map { calculations ->
+                _calculatorState.value = _calculatorState.value.copy(
+                    history = calculations.map { calculation ->
+                        "${calculation.input}=${calculation.result}"
+                    }
+                )
             }
-        }
-        .stateIn(viewModelScope, SharingStarted.Lazily, emptyList())
+    }
 
     override fun onCleared() {
         log.v("Clearing CalculatorViewModel")

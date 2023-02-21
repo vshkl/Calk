@@ -30,10 +30,7 @@ class ObservableCalculatorViewModel: ObservableObject {
         doPublish(viewModel.calculatorState) { [weak self] state in
             self?.input = state.input
             self?.result = state.result
-        }.store(in: &cancellables)
-
-        doPublish(viewModel.calculationsHistory) { [weak self] history in
-            self?.history = history.compactMap({ $0 as? String })
+            self?.history = state.history
         }.store(in: &cancellables)
 
         self.viewModel = viewModel
