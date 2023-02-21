@@ -19,7 +19,7 @@ struct CalculatorScreenContent: View {
     var body: some View {
         VStack(spacing: 0) {
             HistoryList(history: history)
-            Display(input: input,result: result)
+            Display(input: input, result: result)
                 .padding(.bottom, 10)
             Keyboard(onClick: { key in
                 onKeyPress(key)

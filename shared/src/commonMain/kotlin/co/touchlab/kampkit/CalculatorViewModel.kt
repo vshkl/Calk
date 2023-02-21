@@ -80,10 +80,12 @@ class CalculatorViewModel(
                     result = "",
                 )
                 viewModelScope.launch {
-                    calculatorRepository.insertCalculation(
-                        input = currentInput,
-                        result = currentResult,
-                    )
+                    if (currentResult.isNotBlank()) {
+                        calculatorRepository.insertCalculation(
+                            input = currentInput,
+                            result = currentResult,
+                        )
+                    }
                 }
             }
         }
@@ -103,6 +105,8 @@ class CalculatorViewModel(
         try {
             result = evaluator.evaluateDouble(currentInput.normalize())
         } catch (e: IllegalArgumentException) {
+            return
+        } catch (e: IndexOutOfBoundsException) {
             return
         }
 
