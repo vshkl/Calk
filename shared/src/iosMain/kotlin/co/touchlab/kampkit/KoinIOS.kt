@@ -6,7 +6,6 @@ import com.russhwolf.settings.NSUserDefaultsSettings
 import com.russhwolf.settings.Settings
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.drivers.native.NativeSqliteDriver
-import io.ktor.client.engine.darwin.Darwin
 import org.koin.core.Koin
 import org.koin.core.KoinApplication
 import org.koin.core.component.KoinComponent
@@ -28,8 +27,6 @@ fun initKoinIos(
 
 actual val platformModule = module {
     single<SqlDriver> { NativeSqliteDriver(KaMPKitDb.Schema, "KampkitDb") }
-
-    single { Darwin.create() }
 
     single { CalculatorCallbackViewModel(get(), getWith("CalculatorCallbackViewModel")) }
 }

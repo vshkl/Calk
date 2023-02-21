@@ -1,5 +1,3 @@
-
-
 plugins {
     kotlin("multiplatform")
     kotlin("native.cocoapods")
@@ -51,7 +49,6 @@ kotlin {
                 implementation(libs.koin.core)
                 implementation(libs.coroutines.core)
                 implementation(libs.sqlDelight.coroutinesExt)
-                implementation(libs.bundles.ktor.common)
                 implementation(libs.touchlab.stately)
                 implementation(libs.multiplatformSettings.common)
                 implementation(libs.kotlinx.dateTime)
@@ -68,7 +65,6 @@ kotlin {
             dependencies {
                 implementation(libs.androidx.lifecycle.viewmodel)
                 implementation(libs.sqlDelight.android)
-                implementation(libs.ktor.client.okHttp)
             }
         }
         val androidUnitTest by getting {
@@ -79,7 +75,6 @@ kotlin {
         val iosMain by getting {
             dependencies {
                 implementation(libs.sqlDelight.native)
-                implementation(libs.ktor.client.ios)
             }
         }
         val iosTest by getting
