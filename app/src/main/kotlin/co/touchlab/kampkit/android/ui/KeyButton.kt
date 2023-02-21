@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import co.touchlab.kampkit.android.ui.theme.BurntSienna
 import co.touchlab.kampkit.android.ui.theme.EbonyClay
 import co.touchlab.kampkit.android.ui.theme.MintFoam
-import co.touchlab.kampkit.features.calculator.Key
+import co.touchlab.kampkit.Key
 
 @Composable
 fun KeyButton(

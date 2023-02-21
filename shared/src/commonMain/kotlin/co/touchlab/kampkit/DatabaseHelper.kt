@@ -2,7 +2,6 @@ package co.touchlab.kampkit
 
 import co.touchlab.kampkit.db.Calculation
 import co.touchlab.kampkit.db.KaMPKitDb
-import co.touchlab.kampkit.sqldelight.transactionWithContext
 import co.touchlab.kermit.Logger
 import com.squareup.sqldelight.db.SqlDriver
 import com.squareup.sqldelight.runtime.coroutines.asFlow

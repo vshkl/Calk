@@ -1,4 +1,4 @@
-package co.touchlab.kampkit.features.calculator
+package co.touchlab.kampkit
 
 sealed class Key {
     object Plus : Key()

@@ -1,6 +1,5 @@
 package co.touchlab.kampkit
 
-import co.touchlab.kampkit.models.CalculatorRepository
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
 import co.touchlab.kermit.platformLogWriter

@@ -1,7 +1,5 @@
-package co.touchlab.kampkit.features.calculator
+package co.touchlab.kampkit
 
-import co.touchlab.kampkit.models.CalculatorRepository
-import co.touchlab.kampkit.models.ViewModel
 import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.flow.MutableStateFlow

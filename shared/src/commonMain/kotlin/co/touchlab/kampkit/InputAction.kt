@@ -1,4 +1,4 @@
-package co.touchlab.kampkit.features.calculator
+package co.touchlab.kampkit
 
 sealed class InputAction {
     data class Add(val value: String) : InputAction()

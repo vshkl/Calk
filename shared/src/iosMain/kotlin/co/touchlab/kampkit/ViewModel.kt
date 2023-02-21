@@ -1,6 +1,5 @@
-package co.touchlab.kampkit.models
+package co.touchlab.kampkit
 
-import co.touchlab.kampkit.FlowAdapter
 import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.flow.Flow

@@ -1,6 +1,5 @@
-package co.touchlab.kampkit.models
+package co.touchlab.kampkit
 
-import co.touchlab.kampkit.DatabaseHelper
 import co.touchlab.kampkit.db.Calculation
 import co.touchlab.kermit.Logger
 import co.touchlab.stately.ensureNeverFrozen

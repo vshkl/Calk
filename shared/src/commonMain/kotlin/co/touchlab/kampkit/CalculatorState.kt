@@ -1,4 +1,4 @@
-package co.touchlab.kampkit.features.calculator
+package co.touchlab.kampkit
 
 data class CalculatorState(
     val input: String = "",

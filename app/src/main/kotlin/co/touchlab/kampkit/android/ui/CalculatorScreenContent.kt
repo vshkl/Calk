@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import co.touchlab.kampkit.features.calculator.CalculatorState
-import co.touchlab.kampkit.features.calculator.InputAction
-import co.touchlab.kampkit.features.calculator.Key
+import co.touchlab.kampkit.CalculatorState
+import co.touchlab.kampkit.InputAction
+import co.touchlab.kampkit.Key
 
 @Composable
 fun CalculatorScreenContent(
