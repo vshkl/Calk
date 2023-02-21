@@ -1,0 +1,6 @@
+framework module Pods_Calk {
+  umbrella header "Pods-Calk-umbrella.h"
+
+  export *
+  module * { export * }
+}

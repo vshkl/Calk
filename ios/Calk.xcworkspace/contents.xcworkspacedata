@@ -12,9 +12,12 @@
       </FileRef>
    </Group>
    <FileRef
-      location = "group:KaMPKitiOS.xcodeproj">
+      location = "group:/Users/vshkl/Work/kotlin/Calk/ios/Calk.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Calk.xcodeproj">
    </FileRef>
 </Workspace>

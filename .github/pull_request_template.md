@@ -13,7 +13,7 @@ Issue: https://github.com/touchlab/KaMPKit/issues/[issue number]
 <!-- Remove any lines that were not performed -->
 - `./gradlew :app:build`
 - `./gradlew :shared:build`
-- `xcodebuild -workspace ios/KaMPKitiOS.xcworkspace -scheme KaMPKitiOS 
+- `xcodebuild -workspace ios/Calk.xcworkspace -scheme Calk 
     -sdk iphoneos -configuration Debug build -destination name="iPhone 8"`
 - manual testing
 
