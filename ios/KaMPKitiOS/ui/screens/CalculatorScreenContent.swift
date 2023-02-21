@@ -25,7 +25,7 @@ struct CalculatorScreenContent: View {
             )
             Keyboard(onClick: { key in
                 onKeyPress(key)
-            })
+            }).layoutPriority(1)
         }
     }
 }
