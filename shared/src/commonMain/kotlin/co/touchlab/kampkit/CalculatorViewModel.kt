@@ -5,6 +5,7 @@ import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
@@ -21,16 +22,19 @@ class CalculatorViewModel(
     val calculatorState: StateFlow<CalculatorState> = _calculatorState
 
     init {
-        calculatorRepository
-            .getCalculations()
-            .map { calculations ->
-                _calculatorState.value = _calculatorState.value.copy(
-                    history = calculations.map { calculation ->
-                        "${calculation.input}=${calculation.result}"
-                    }
-                )
-            }
-            .stateIn(viewModelScope, SharingStarted.Lazily, CalculatorState())
+        viewModelScope.launch {
+            calculatorRepository
+                .getCalculations()
+                .map { calculations ->
+                    _calculatorState.value = _calculatorState.value.copy(
+                        history = calculations.map { calculation ->
+                            "${calculation.input}=${calculation.result}"
+                        }
+                    )
+                }
+                .stateIn(viewModelScope, SharingStarted.Lazily, CalculatorState())
+                .collect()
+        }
     }
 
     override fun onCleared() {
