@@ -4,7 +4,6 @@ import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.Evaluator
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 
 class CalculatorViewModel(
@@ -19,15 +18,17 @@ class CalculatorViewModel(
     val calculatorState: StateFlow<CalculatorState> = _calculatorState
 
     init {
-        calculatorRepository
-            .getCalculations()
-            .map { calculations ->
-                _calculatorState.value = _calculatorState.value.copy(
-                    history = calculations.map { calculation ->
-                        "${calculation.input}=${calculation.result}"
-                    }
-                )
-            }
+        viewModelScope.launch {
+            calculatorRepository
+                .getCalculations()
+                .collect { calculations ->
+                    _calculatorState.value = _calculatorState.value.copy(
+                        history = calculations.map { calculation ->
+                            "${calculation.input}=${calculation.result}"
+                        }
+                    )
+                }
+        }
     }
 
     override fun onCleared() {

@@ -63,7 +63,6 @@ private val coreModule = module {
         CalculatorRepository(
             get(),
             getWith("CalculatorRepository"),
-            get(),
         )
     }
 }
