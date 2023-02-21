@@ -12,17 +12,15 @@ struct HistoryList: View {
     let history: [String]
 
     var body: some View {
-        ScrollView(.vertical) {
+        ScrollView(.vertical, showsIndicators: false) {
             LazyVStack(spacing: 0) {
                 ForEach(history, id: \.self) { calculation in
                     HistoryRow(calculation: calculation)
                 }
             }
-            .rotationEffect(Angle(degrees: 180))
-            .scaleEffect(x: -1.0, y: 1.0, anchor: .center)
+            .flip(along: .vertical)
         }
-        .rotationEffect(Angle(degrees: 180))
-        .scaleEffect(x: -1.0, y: 1.0, anchor: .center)
+        .flip(along: .vertical)
     }
 }
 

@@ -17,14 +17,22 @@ struct Display: View {
             alignment: HorizontalAlignment.trailing,
             spacing: 10
         ) {
-            Text(input)
-                .font(.system(size: 40, weight: Font.Weight.medium))
-                .frame(maxWidth: .infinity, idealHeight: 50, alignment: .trailing)
-                .fixedSize(horizontal: false, vertical: true)
-            Text(result)
-                .font(.system(size: 28, weight: Font.Weight.regular))
-                .frame(maxWidth: .infinity, idealHeight: 40, alignment: .trailing)
-                .fixedSize(horizontal: false, vertical: true)
+            ScrollView(.horizontal, showsIndicators: false) {
+                Text(input)
+                    .font(.system(size: 40, weight: Font.Weight.medium))
+                    .frame(maxWidth: .infinity, idealHeight: 50, alignment: .trailing)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .flip(along: .horizontal)
+            }
+            .flip(along: .horizontal)
+            ScrollView(.horizontal, showsIndicators: false) {
+                Text(result)
+                    .font(.system(size: 28, weight: Font.Weight.regular))
+                    .frame(maxWidth: .infinity, idealHeight: 40, alignment: .trailing)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .flip(along: .horizontal)
+            }
+            .flip(along: .horizontal)
         }
         .padding(.horizontal, 10)
     }

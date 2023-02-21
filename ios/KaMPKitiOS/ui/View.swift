@@ -9,6 +9,11 @@
 import SwiftUI
 
 extension View {
+
+    func flip(along orientatio: Orientatio) -> some View {
+        modifier(FlipModifier(orientation: orientatio))
+    }
+
     func debugModifier<T: View>(_ modifier: (Self) -> T) -> some View {
         #if DEBUG
         return modifier(self)
