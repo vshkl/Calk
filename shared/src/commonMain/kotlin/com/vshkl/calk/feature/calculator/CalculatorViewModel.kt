@@ -1,6 +1,8 @@
-package com.vshkl.calk
+package com.vshkl.calk.feature.calculator
 
 import co.touchlab.kermit.Logger
+import com.vshkl.calk.model.InputAction
+import com.vshkl.calk.core.ViewModel
 import com.vshkl.calk.usecases.EvaluateExpression
 import com.vshkl.calk.usecases.ObserveCalculationsHistory
 import com.vshkl.calk.usecases.SaveCalculation

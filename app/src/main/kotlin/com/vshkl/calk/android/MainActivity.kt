@@ -4,10 +4,10 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import co.touchlab.kermit.Logger
-import com.vshkl.calk.CalculatorViewModel
+import com.vshkl.calk.feature.calculator.CalculatorViewModel
 import com.vshkl.calk.android.ui.CalculatorScreen
 import com.vshkl.calk.android.ui.theme.CalkTheme
-import com.vshkl.calk.injectLogger
+import com.vshkl.calk.core.injectLogger
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.component.KoinComponent
 

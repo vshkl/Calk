@@ -5,8 +5,8 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.util.Log
 import com.vshkl.calk.AppInfo
-import com.vshkl.calk.CalculatorViewModel
-import com.vshkl.calk.initKoin
+import com.vshkl.calk.feature.calculator.CalculatorViewModel
+import com.vshkl.calk.core.initKoin
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.parameter.parametersOf
 import org.koin.dsl.module
@@ -29,7 +29,7 @@ class MainApp : Application() {
                 single<SharedPreferences> {
                     get<Context>().getSharedPreferences(
                         "KAMPSTARTER_SETTINGS",
-                        Context.MODE_PRIVATE
+                        MODE_PRIVATE
                     )
                 }
                 single<AppInfo> { AndroidAppInfo }

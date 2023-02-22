@@ -1,4 +1,4 @@
-package com.vshkl.calk
+package com.vshkl.calk.usecases
 
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig

@@ -1,4 +1,4 @@
-package com.vshkl.calk
+package com.vshkl.calk.core
 
 import kotlinx.coroutines.CoroutineScope
 

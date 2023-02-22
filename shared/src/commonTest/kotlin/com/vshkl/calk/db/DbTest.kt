@@ -1,14 +1,14 @@
-package com.vshkl.calk
+package com.vshkl.calk.db
 
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
+import com.vshkl.calk.testDbConnection
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test
 import kotlin.test.assertEquals
-import kotlin.test.assertNull
 import kotlin.test.assertTrue
 
 class DbTest {

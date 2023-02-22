@@ -21,7 +21,7 @@ import androidx.compose.ui.unit.sp
 import com.vshkl.calk.android.ui.theme.BurntSienna
 import com.vshkl.calk.android.ui.theme.EbonyClay
 import com.vshkl.calk.android.ui.theme.MintFoam
-import com.vshkl.calk.Key
+import com.vshkl.calk.model.Key
 
 @Composable
 fun KeyButton(

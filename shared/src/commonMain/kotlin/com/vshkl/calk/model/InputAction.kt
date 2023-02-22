@@ -1,4 +1,4 @@
-package com.vshkl.calk
+package com.vshkl.calk.model
 
 sealed class InputAction {
     data class Add(val value: String) : InputAction()

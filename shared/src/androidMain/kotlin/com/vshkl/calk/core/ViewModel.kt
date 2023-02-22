@@ -1,4 +1,4 @@
-package com.vshkl.calk
+package com.vshkl.calk.core
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope as androidXViewModelScope

@@ -1,6 +1,7 @@
 package com.vshkl.calk
 
 import co.touchlab.kermit.Logger
+import com.vshkl.calk.core.initKoinIos
 import org.koin.core.context.stopKoin
 import org.koin.core.parameter.parametersOf
 import org.koin.test.check.checkModules

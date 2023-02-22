@@ -6,9 +6,9 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.vshkl.calk.CalculatorState
-import com.vshkl.calk.InputAction
-import com.vshkl.calk.Key
+import com.vshkl.calk.feature.calculator.CalculatorState
+import com.vshkl.calk.model.InputAction
+import com.vshkl.calk.model.Key
 
 @Composable
 fun CalculatorScreenContent(
