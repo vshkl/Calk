@@ -7,7 +7,7 @@ import com.squareup.sqldelight.drivers.native.wrapConnection
 import com.vshkl.calk.db.CalkDb
 
 internal actual fun testDbConnection(): SqlDriver {
-    val schema = Calk.Schema
+    val schema = CalkDb.Schema
     return NativeSqliteDriver(
         DatabaseConfiguration(
             name = "calkdb",
