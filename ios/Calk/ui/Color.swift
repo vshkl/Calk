@@ -1,6 +1,6 @@
 //
 //  Color.swift
-//  KaMPKitiOS
+//  Calk
 //
 //  Created by Pavel Vashkel on 20/02/2023.
 //  Copyright © 2023 Touchlab. All rights reserved.

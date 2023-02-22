@@ -1,15 +1,15 @@
 //
-//  KaMPKitiOSTests.swift
-//  KaMPKitiOSTests
+//  CalkTests.swift
+//  CalkTests
 //
 //  Created by Kevin Schildhorn on 12/18/19.
 //  Copyright © 2019 Touchlab. All rights reserved.
 //
 
 import XCTest
-@testable import KaMPKitiOS
+@testable import Calk
 
-class KaMPKitiOSTests: XCTestCase {
+class CalkTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

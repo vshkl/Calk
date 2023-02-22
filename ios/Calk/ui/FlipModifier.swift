@@ -1,6 +1,6 @@
 //
 //  FlipModivier.swift
-//  KaMPKitiOS
+//  Calk
 //
 //  Created by Pavel Vashkel on 21/02/2023.
 //  Copyright © 2023 Touchlab. All rights reserved.
