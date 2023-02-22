@@ -1,7 +1,8 @@
-package com.vshkl.calk
+package com.vshkl.calk.usecases
 
 import co.touchlab.kermit.Logger
 import co.touchlab.stately.ensureNeverFrozen
+import com.vshkl.calk.DatabaseHelper
 
 class SaveCalculation(
     private val dbHelper: DatabaseHelper,

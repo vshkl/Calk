@@ -1,7 +1,8 @@
-package com.vshkl.calk
+package com.vshkl.calk.usecases
 
 import co.touchlab.kermit.Logger
 import co.touchlab.stately.ensureNeverFrozen
+import com.vshkl.calk.DatabaseHelper
 import com.vshkl.calk.db.Calculation
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map

@@ -1,6 +1,9 @@
 package com.vshkl.calk
 
 import co.touchlab.kermit.Logger
+import com.vshkl.calk.usecases.EvaluateExpression
+import com.vshkl.calk.usecases.ObserveCalculationsHistory
+import com.vshkl.calk.usecases.SaveCalculation
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

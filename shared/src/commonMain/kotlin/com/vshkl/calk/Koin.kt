@@ -4,6 +4,9 @@ import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
 import co.touchlab.kermit.platformLogWriter
 import com.github.murzagalin.evaluator.Evaluator
+import com.vshkl.calk.usecases.EvaluateExpression
+import com.vshkl.calk.usecases.ObserveCalculationsHistory
+import com.vshkl.calk.usecases.SaveCalculation
 import kotlinx.coroutines.Dispatchers
 import kotlinx.datetime.Clock
 import org.koin.core.KoinApplication

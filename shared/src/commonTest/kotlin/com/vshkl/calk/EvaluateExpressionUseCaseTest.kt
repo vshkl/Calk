@@ -3,6 +3,7 @@ package com.vshkl.calk
 import co.touchlab.kermit.Logger
 import co.touchlab.kermit.StaticConfig
 import com.github.murzagalin.evaluator.Evaluator
+import com.vshkl.calk.usecases.EvaluateExpression
 import kotlinx.coroutines.test.runTest
 import kotlin.test.BeforeTest
 import kotlin.test.Test

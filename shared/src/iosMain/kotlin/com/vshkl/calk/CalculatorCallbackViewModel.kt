@@ -1,6 +1,9 @@
 package com.vshkl.calk
 
 import co.touchlab.kermit.Logger
+import com.vshkl.calk.usecases.EvaluateExpression
+import com.vshkl.calk.usecases.ObserveCalculationsHistory
+import com.vshkl.calk.usecases.SaveCalculation
 
 @Suppress("Unused") // Members are called from Swift
 class CalculatorCallbackViewModel(
