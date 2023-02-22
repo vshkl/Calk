@@ -1,4 +1,4 @@
-name: KaMPKit-iOS
+name: Calk-iOS
 
 on:
   workflow_dispatch:

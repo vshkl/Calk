@@ -1,4 +1,4 @@
-name: KaMPKit-Android
+name: Calk-Android
 
 on:
   workflow_dispatch:

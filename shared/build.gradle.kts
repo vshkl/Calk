@@ -24,7 +24,7 @@ android {
         abortOnError = true
     }
 
-    namespace = "co.touchlab.kampkit"
+    namespace = "com.vshkl.calk"
 }
 
 version = "1.2"
@@ -92,8 +92,8 @@ kotlin {
         }
 
     cocoapods {
-        summary = "Common library for the KaMP starter kit"
-        homepage = "https://github.com/touchlab/KaMPKit"
+        summary = "Common library for the Calk app"
+        homepage = "https://github.com/vshkl/Calk"
         framework {
             isStatic = false // SwiftUI preview requires dynamic framework
             linkerOpts("-lsqlite3")
@@ -104,7 +104,7 @@ kotlin {
 }
 
 sqldelight {
-    database("KaMPKitDb") {
-        packageName = "co.touchlab.kampkit.db"
+    database("CalkDb") {
+        packageName = "com.vshkl.calk.db"
     }
 }
