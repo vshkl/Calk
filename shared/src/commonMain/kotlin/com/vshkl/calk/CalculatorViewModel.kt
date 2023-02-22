@@ -10,7 +10,8 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class CalculatorViewModel(
-    private val evaluateExpressionUseCase: EvaluateExpressionUseCase,
+    private val evaluateExpression: EvaluateExpression,
+    private val observeCalculationsHistory: ObserveCalculationsHistory,
     private val calculatorRepository: CalculatorRepository,
     log: Logger,
 ) : ViewModel() {
@@ -23,14 +24,10 @@ class CalculatorViewModel(
 
     init {
         viewModelScope.launch {
-            calculatorRepository
-                .getCalculations()
-                .map { calculations ->
-                    _calculatorState.value = _calculatorState.value.copy(
-                        history = calculations.map { calculation ->
-                            "${calculation.input}=${calculation.result}"
-                        }
-                    )
+            observeCalculationsHistory()
+                .map { history ->
+                    _calculatorState.value = _calculatorState.value
+                        .copy(history = history)
                 }
                 .stateIn(viewModelScope, SharingStarted.Lazily, CalculatorState())
                 .collect()
@@ -43,7 +40,7 @@ class CalculatorViewModel(
 
     fun modifyInput(action: InputAction) {
         fun maybeCalculate() {
-            evaluateExpressionUseCase(expression = calculatorState.value.input)?.let { result ->
+            evaluateExpression(expression = calculatorState.value.input)?.let { result ->
                 _calculatorState.value = _calculatorState.value
                     .copy(result = result)
             }

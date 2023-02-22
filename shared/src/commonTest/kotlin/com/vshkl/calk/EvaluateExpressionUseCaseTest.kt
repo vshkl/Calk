@@ -11,11 +11,11 @@ import kotlin.test.assertNull
 
 class EvaluateExpressionUseCaseTest {
 
-    private lateinit var evaluateExpressionUseCase: EvaluateExpressionUseCase
+    private lateinit var evaluateExpression: EvaluateExpression
 
     @BeforeTest
     fun setup() = runTest {
-        evaluateExpressionUseCase = EvaluateExpressionUseCase(
+        evaluateExpression = EvaluateExpression(
             evaluator = Evaluator(),
             log = Logger(StaticConfig()),
         )
@@ -28,7 +28,7 @@ class EvaluateExpressionUseCaseTest {
 
         assertEquals(
             expectedResult,
-            evaluateExpressionUseCase(expression),
+            evaluateExpression(expression),
         )
     }
 
@@ -39,7 +39,7 @@ class EvaluateExpressionUseCaseTest {
 
         assertEquals(
             expectedResult,
-            evaluateExpressionUseCase(expression),
+            evaluateExpression(expression),
         )
     }
 
@@ -47,6 +47,6 @@ class EvaluateExpressionUseCaseTest {
     fun `should return null for invalid expression`() = runTest {
         val expression = "(2+3×4.1"
 
-        assertNull(evaluateExpressionUseCase(expression))
+        assertNull(evaluateExpression(expression))
     }
 }

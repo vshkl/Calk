@@ -18,10 +18,6 @@ class CalculatorRepository(
         ensureNeverFrozen()
     }
 
-    fun getCalculations(): Flow<List<Calculation>> {
-        return dbHelper.selectAllCalculations()
-    }
-
     suspend fun insertCalculation(input: String, result: String) {
         dbHelper.insertCalculation(input, result)
     }

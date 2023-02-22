@@ -2,9 +2,8 @@ package com.vshkl.calk
 
 import co.touchlab.kermit.Logger
 import com.github.murzagalin.evaluator.Evaluator
-import kotlin.math.roundToLong
 
-class EvaluateExpressionUseCase(
+class EvaluateExpression(
     private val evaluator: Evaluator,
     log: Logger,
 ) {

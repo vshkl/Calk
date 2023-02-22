@@ -22,6 +22,7 @@ class MainApp : Application() {
                     CalculatorViewModel(
                         get(),
                         get(),
+                        get(),
                         get { parametersOf("CalculatorViewModel") },
                     )
                 }

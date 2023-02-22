@@ -26,7 +26,9 @@ fun initKoinIos(
 )
 
 actual val platformModule = module {
-    single<SqlDriver> { NativeSqliteDriver(CalkDb.Schema, "CalkDbx") }
+    single<SqlDriver> {
+        NativeSqliteDriver(CalkDb.Schema, "CalkDbx")
+    }
 
     single {
         CalculatorCallbackViewModel(get(), get(), getWith("CalculatorCallbackViewModel"))

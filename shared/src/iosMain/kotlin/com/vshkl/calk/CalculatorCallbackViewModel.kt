@@ -4,13 +4,15 @@ import co.touchlab.kermit.Logger
 
 @Suppress("Unused") // Members are called from Swift
 class CalculatorCallbackViewModel(
-    evaluateExpressionUseCase: EvaluateExpressionUseCase,
+    evaluateExpression: EvaluateExpression,
+    observeCalculationsHistory: ObserveCalculationsHistory,
     calculatorRepository: CalculatorRepository,
     log: Logger,
 ) : CallbackViewModel() {
 
     override val viewModel = CalculatorViewModel(
-        evaluateExpressionUseCase,
+        evaluateExpression,
+        observeCalculationsHistory,
         calculatorRepository,
         log,
     )
