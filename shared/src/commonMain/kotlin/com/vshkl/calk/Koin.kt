@@ -81,14 +81,6 @@ private val coreModule = module {
             getWith("SaveCalculation"),
         )
     }
-
-    single {
-        CalculatorRepository(
-            get(),
-            get(),
-            getWith("CalculatorRepository"),
-        )
-    }
 }
 
 internal inline fun <reified T> Scope.getWith(vararg params: Any?): T {
