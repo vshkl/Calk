@@ -18,24 +18,6 @@ class CalculatorRepository(
         ensureNeverFrozen()
     }
 
-    fun evaluateExpression(expression: String): Double? {
-        fun String.normalize(): String {
-            return this
-                .replace("÷", "/")
-                .replace("×", "*")
-        }
-
-        log.d { "Evaluating expression: $expression" }
-
-        return try {
-            evaluator.evaluateDouble(expression.normalize())
-        } catch (e: IllegalArgumentException) {
-            null
-        } catch (e: IndexOutOfBoundsException) {
-            null
-        }
-    }
-
     fun getCalculations(): Flow<List<Calculation>> {
         return dbHelper.selectAllCalculations()
     }
