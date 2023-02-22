@@ -6,14 +6,14 @@ import co.touchlab.kermit.Logger
 class CalculatorCallbackViewModel(
     evaluateExpression: EvaluateExpression,
     observeCalculationsHistory: ObserveCalculationsHistory,
-    calculatorRepository: CalculatorRepository,
+    saveCalculation: SaveCalculation,
     log: Logger,
 ) : CallbackViewModel() {
 
     override val viewModel = CalculatorViewModel(
         evaluateExpression,
         observeCalculationsHistory,
-        calculatorRepository,
+        saveCalculation,
         log,
     )
 

@@ -66,13 +66,19 @@ private val coreModule = module {
     single {
         EvaluateExpression(
             get(),
-            getWith("EvaluateExpressionUseCase"),
+            getWith("EvaluateExpression"),
         )
     }
     single {
         ObserveCalculationsHistory(
             get(),
             getWith("ObserveCalculationsHistory"),
+        )
+    }
+    single {
+        SaveCalculation(
+            get(),
+            getWith("SaveCalculation"),
         )
     }
 

@@ -8,7 +8,7 @@ class EvaluateExpression(
     log: Logger,
 ) {
 
-    private val log = log.withTag("EvaluateExpressionUseCase")
+    private val log = log.withTag("EvaluateExpression")
 
     operator fun invoke(expression: String): String? {
         fun String.normalize(): String {

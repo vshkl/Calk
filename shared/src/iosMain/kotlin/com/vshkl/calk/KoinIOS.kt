@@ -31,7 +31,7 @@ actual val platformModule = module {
     }
 
     single {
-        CalculatorCallbackViewModel(get(), get(), getWith("CalculatorCallbackViewModel"))
+        CalculatorCallbackViewModel(get(), get(), get(), getWith("CalculatorCallbackViewModel"))
     }
 }
 

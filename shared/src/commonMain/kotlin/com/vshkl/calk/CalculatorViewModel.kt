@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class CalculatorViewModel(
     private val evaluateExpression: EvaluateExpression,
     private val observeCalculationsHistory: ObserveCalculationsHistory,
-    private val calculatorRepository: CalculatorRepository,
+    private val saveCalculation: SaveCalculation,
     log: Logger,
 ) : ViewModel() {
 
@@ -49,10 +49,7 @@ class CalculatorViewModel(
         fun writeCalculation(input: String, result: String) {
             viewModelScope.launch {
                 if (result.isNotBlank()) {
-                    calculatorRepository.insertCalculation(
-                        input = input,
-                        result = result,
-                    )
+                    saveCalculation(input = input, result = result)
                 }
             }
         }
