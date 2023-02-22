@@ -14,8 +14,8 @@
 		F1465F0123AA94BF0055F7C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F0023AA94BF0055F7C3 /* AppDelegate.swift */; };
 		F1465F0A23AA94BF0055F7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1465F0923AA94BF0055F7C3 /* Assets.xcassets */; };
 		F1465F0D23AA94BF0055F7C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1465F0B23AA94BF0055F7C3 /* LaunchScreen.storyboard */; };
-		F1465F1823AA94C00055F7C3 /* KaMPKitiOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F1723AA94C00055F7C3 /* KaMPKitiOSTests.swift */; };
-		F1465F2323AA94C00055F7C3 /* KaMPKitiOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F2223AA94C00055F7C3 /* KaMPKitiOSUITests.swift */; };
+		F1465F1823AA94C00055F7C3 /* CalkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F1723AA94C00055F7C3 /* CalkTests.swift */; };
+		F1465F2323AA94C00055F7C3 /* CalkUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F2223AA94C00055F7C3 /* CalkUITests.swift */; };
 		FEA2D363299D45A900EE3857 /* KeyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA2D362299D45A900EE3857 /* KeyButton.swift */; };
 		FEE74947299D7BCE0032ABA6 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE74946299D7BCE0032ABA6 /* Keyboard.swift */; };
 		FEE74949299D7D390032ABA6 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEE74948299D7D390032ABA6 /* GridStack.swift */; };
@@ -63,10 +63,10 @@
 		F1465F0C23AA94BF0055F7C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F1465F0E23AA94BF0055F7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1465F1323AA94C00055F7C3 /* CalkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1465F1723AA94C00055F7C3 /* KaMPKitiOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaMPKitiOSTests.swift; sourceTree = "<group>"; };
+		F1465F1723AA94C00055F7C3 /* CalkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalkTests.swift; sourceTree = "<group>"; };
 		F1465F1923AA94C00055F7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F1465F1E23AA94C00055F7C3 /* CalkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CalkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F1465F2223AA94C00055F7C3 /* KaMPKitiOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KaMPKitiOSUITests.swift; sourceTree = "<group>"; };
+		F1465F2223AA94C00055F7C3 /* CalkUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalkUITests.swift; sourceTree = "<group>"; };
 		F1465F2423AA94C00055F7C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C259C83C689DF8F4602F38 /* Pods-KaMPKitiOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaMPKitiOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaMPKitiOS/Pods-KaMPKitiOS.debug.xcconfig"; sourceTree = "<group>"; };
 		FEA2D362299D45A900EE3857 /* KeyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyButton.swift; sourceTree = "<group>"; };
@@ -170,7 +170,7 @@
 		F1465F1623AA94C00055F7C3 /* CalkTests */ = {
 			isa = PBXGroup;
 			children = (
-				F1465F1723AA94C00055F7C3 /* KaMPKitiOSTests.swift */,
+				F1465F1723AA94C00055F7C3 /* CalkTests.swift */,
 				F1465F1923AA94C00055F7C3 /* Info.plist */,
 			);
 			path = CalkTests;
@@ -179,7 +179,7 @@
 		F1465F2123AA94C00055F7C3 /* CalkUITests */ = {
 			isa = PBXGroup;
 			children = (
-				F1465F2223AA94C00055F7C3 /* KaMPKitiOSUITests.swift */,
+				F1465F2223AA94C00055F7C3 /* CalkUITests.swift */,
 				F1465F2423AA94C00055F7C3 /* Info.plist */,
 			);
 			path = CalkUITests;
@@ -444,7 +444,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1465F1823AA94C00055F7C3 /* KaMPKitiOSTests.swift in Sources */,
+				F1465F1823AA94C00055F7C3 /* CalkTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1465F2323AA94C00055F7C3 /* KaMPKitiOSUITests.swift in Sources */,
+				F1465F2323AA94C00055F7C3 /* CalkUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
