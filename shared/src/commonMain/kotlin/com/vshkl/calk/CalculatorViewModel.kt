@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 
 class CalculatorViewModel(
+    private val evaluateExpressionUseCase: EvaluateExpressionUseCase,
     private val calculatorRepository: CalculatorRepository,
     log: Logger,
 ) : ViewModel() {
@@ -42,13 +43,10 @@ class CalculatorViewModel(
 
     fun modifyInput(action: InputAction) {
         fun maybeCalculate() {
-            calculatorRepository
-                .evaluateExpression(calculatorState.value.input)
-                ?.run {
-                    _calculatorState.value = _calculatorState.value.copy(
-                        result = this.toString().removeSuffix(".0"),
-                    )
-                }
+            evaluateExpressionUseCase(expression = calculatorState.value.input)?.let { result ->
+                _calculatorState.value = _calculatorState.value
+                    .copy(result = result)
+            }
         }
 
         fun writeCalculation(input: String, result: String) {

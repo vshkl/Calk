@@ -19,7 +19,11 @@ class MainApp : Application() {
             module {
                 single<Context> { this@MainApp }
                 viewModel {
-                    CalculatorViewModel(get(), get { parametersOf("CalculatorViewModel") })
+                    CalculatorViewModel(
+                        get(),
+                        get(),
+                        get { parametersOf("CalculatorViewModel") },
+                    )
                 }
                 single<SharedPreferences> {
                     get<Context>().getSharedPreferences(

@@ -20,7 +20,7 @@ class DbTest {
         dbHelper = DatabaseHelper(
             testDbConnection(),
             Logger(StaticConfig()),
-            Dispatchers.Default
+            Dispatchers.Default,
         )
         dbHelper.deleteAllCalculations()
     }

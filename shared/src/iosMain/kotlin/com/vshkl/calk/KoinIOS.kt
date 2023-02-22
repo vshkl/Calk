@@ -26,9 +26,11 @@ fun initKoinIos(
 )
 
 actual val platformModule = module {
-    single<SqlDriver> { NativeSqliteDriver(CalkDb.Schema, "CalkDb") }
+    single<SqlDriver> { NativeSqliteDriver(CalkDb.Schema, "CalkDbx") }
 
-    single { CalculatorCallbackViewModel(get(), getWith("CalculatorCallbackViewModel")) }
+    single {
+        CalculatorCallbackViewModel(get(), get(), getWith("CalculatorCallbackViewModel"))
+    }
 }
 
 // Access from Swift to create a logger

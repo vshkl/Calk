@@ -64,6 +64,13 @@ private val coreModule = module {
     factory { (tag: String?) -> if (tag != null) baseLogger.withTag(tag) else baseLogger }
 
     single {
+        EvaluateExpressionUseCase(
+            get(),
+            getWith("EvaluateExpressionUseCase"),
+        )
+    }
+
+    single {
         CalculatorRepository(
             get(),
             get(),
