@@ -3,6 +3,11 @@
 A simple calculator application made with KMM as an experiment. Based on [KaMPKit](https://github.com/touchlab/KaMPKit) from [Touchlab](https://github.com/touchlab).
 The app will be used as a playground for KMM and is not intended to be any kind of sophisticated calculator.
 
+<div style="display:flex;" >
+<img src="https://github.com/vshkl/Calk/blob/main/screenshots/screenshot_01.png" width="25%" >
+<img src="https://github.com/vshkl/Calk/blob/main/screenshots/screenshot_02.png" width="25%" >
+</div>
+
 # What's inside
 
 ## Architecture
